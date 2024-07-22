@@ -5,7 +5,7 @@ from airflow.secrets.metastore import MetastoreBackend
 
 class StageToRedshiftOperator(BaseOperator):
     ui_color = '#358140'
-
+    template_fields = ("s3_key",)
     copy_sql = """
         COPY {}
         FROM '{}'
